@@ -1,0 +1,15 @@
+{
+  "name": "@andwoo/scss-grid",
+  "version": "1.0.0",
+  "description": "SCSS grid framework",
+  "main": "index.ts",
+  "repository": "git@github.com:andwoo/scss-grid.git",
+  "author": "Andrew Manley <andrewlmanley@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "@types/react": "16.9.34",
+    "@types/react-dom": "16.9.6",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  }
+}
