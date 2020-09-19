@@ -1,5 +1,5 @@
 import './scss/main.scss';
-import { Grid } from './src/components/Grid';
-import { Column, ColumnLineBreak } from './src/components/Column';
+import { Layout } from './src/components/Layout';
+import { LayoutItem } from './src/components/LayoutItem';
 
-export { Grid, Column, ColumnLineBreak };
+export { Layout, LayoutItem };
