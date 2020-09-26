@@ -4,16 +4,21 @@ import { BaseProps } from '../models/BaseProps';
 const baseStyle: React.CSSProperties = {
   display: 'flex',
   flex: 1,
-  justifyContent: 'start',
-  width: '100%',
-  height: '100%'
+  alignItems: 'flex-start',
+  alignContent: 'flex-start'
 }
 
 export interface LayoutProps extends BaseProps {
   direction: 'column' | 'row'
 }
 
+function createStyle(direction: string): React.CSSProperties {
+  return {
+    ...baseStyle,
+    flexDirection: direction === 'row' ? 'column' : 'row'
+  }
+}
+
 export const Layout = ({ direction, children, style }: LayoutProps): JSX.Element => {
-  style = Object.assign({ flexDirection: direction === 'column' ? 'row' : 'column' }, style);
-  return <div style={Object.assign({ ...baseStyle }, style ?? {})}>{children}</div >;
+  return <div style={Object.assign(createStyle(direction), style ?? {})}>{children}</div>;
 }
