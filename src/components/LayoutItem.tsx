@@ -37,7 +37,14 @@ export interface LayoutItemProps extends BaseProps {
   stretch?: boolean;
 }
 
-export const LayoutItem = ({ children, style, size, stretch }: LayoutItemProps): JSX.Element => {
-  return <div style={Object.assign(createStyle(size, stretch), style ?? {})}>{children}</div>;
+export const LayoutItem = ({ children, style, size, stretch, className = '' }: LayoutItemProps): JSX.Element => {
+  return (
+    <div
+      className={className}
+      style={Object.assign(createStyle(size, stretch), style ?? {})}
+    >
+      {children}
+    </div>
+  )
 }
 

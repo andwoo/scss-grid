@@ -9,16 +9,22 @@ const baseStyle: React.CSSProperties = {
 }
 
 export interface LayoutProps extends BaseProps {
-  direction: 'column' | 'row'
+  direction?: 'column' | 'row'
 }
 
-function createStyle(direction: string): React.CSSProperties {
+function createStyle(direction = 'column'): React.CSSProperties {
   return {
     ...baseStyle,
     flexDirection: direction === 'row' ? 'column' : 'row'
   }
 }
 
-export const Layout = ({ direction, children, style }: LayoutProps): JSX.Element => {
-  return <div style={Object.assign(createStyle(direction), style ?? {})}>{children}</div>;
+export const Layout = ({ direction, children, style, className = '' }: LayoutProps): JSX.Element => {
+  return (
+    <div
+      className={className}
+      style={Object.assign(createStyle(direction), style ?? {})}
+    >
+      {children}
+    </div>);
 }
